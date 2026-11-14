@@ -156,11 +156,11 @@ function openCertificate(id){const cert=certificates[id];if(!cert)return;showMod
 document.querySelectorAll('.cert-petal,.certificate-index-card').forEach(item=>item.addEventListener('click',()=>openCertificate(item.dataset.cert)));
 document.querySelectorAll('.skill-flower').forEach(flower=>flower.addEventListener('click',()=>{const skill=flower.dataset.skill;showModal('Growing skill · '+flower.dataset.level,skill,skillNotes[skill])}));
 const projectDestinations={
-'StreeSure':{repo:'https://github.com/mahaksinghh/SIH',note:'StreeSure is in your SIH project repository. Its app needs the project’s backend, so I could not find a live demo to open yet.'},
-'CareCompass':{repo:'https://github.com/mahaksinghh/carecompass',note:'This opens your own CareCompass repository under mahaksinghh.'},
+'StreeSure':{repo:'https://github.com/mahaksinghh/SIH',demo:'https://mahaksinghh.github.io/SIH/'},
+'CareCompass':{repo:'https://github.com/mahaksinghh/carecompass',demo:'https://mahaksinghh.github.io/carecompass/'},
 'E-commerce Website':{repo:'https://github.com/mahaksinghh/Mahak--Singh--CSE',demo:'https://htmlpreview.github.io/?https://github.com/mahaksinghh/Mahak--Singh--CSE/blob/main/ecommercewebsite.html'},
 'Shopsy Website':{repo:'https://github.com/mahaksinghh/projectsem2',demo:'https://htmlpreview.github.io/?https://github.com/mahaksinghh/projectsem2/blob/main/index.html'},
-'AI Interview Agent':{repo:'https://github.com/mahaksinghh/VicoDaThon',note:'The AI Interview Agent is in your ViCodaThon repository. Its frontend currently expects a local backend, so there is no live demo to open yet.'}
+'AI Interview Agent':{repo:'https://github.com/mahaksinghh/VicoDaThon',demo:'https://mahaksinghh.github.io/VicoDaThon/'}
 };
 document.querySelectorAll('.project-butterfly').forEach(butterfly=>butterfly.addEventListener('click',()=>{const name=butterfly.dataset.project,destination=projectDestinations[name];if(destination?.demo){window.open(destination.demo,'_blank','noopener,noreferrer');return}showModal('Project repository',name,destination?.note||'Open the project repository to explore its files.');if(destination?.repo){modalLink.href=destination.repo;modalLink.textContent='Open project repository ↗';modalLink.style.display='inline-block'}}));
 document.querySelectorAll('.hobby-orb').forEach(orb=>orb.addEventListener('click',()=>showModal('A little joy',orb.dataset.hobby,'One of Mahak’s favorite things to enjoy away from the screen.')));
